@@ -1,0 +1,3 @@
+class Recording {
+  ArrayList events;
+}
