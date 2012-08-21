@@ -59,4 +59,12 @@ class Recording {
 
     return join(output, ", ");
   }
+
+  int eventsLength() {
+    return events.size();
+  }
+
+  int[] getEvent(int i) {
+    return (int[]) events.get(i);
+  }
 }

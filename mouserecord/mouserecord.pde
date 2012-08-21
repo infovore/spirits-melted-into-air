@@ -1,6 +1,7 @@
 int isRecording = 0;
 int isPlaying = 0;
 int circleSize = 50;
+int playbackIndex = 0;
 
 Recording r;
 
@@ -38,6 +39,21 @@ void draw() {
       r.addEvent(coords);
     }
   }
+
+  if(isPlaying > 0) {
+    fill(255);
+    text("Playback", 0, height-2);
+    fill(0,0,128);
+
+    if(playbackIndex < r.eventsLength()) {
+      int[] event = r.getEvent(playbackIndex);
+      ellipse(event[0], event[1], circleSize, circleSize);
+      playbackIndex++;
+    } else {
+      playbackIndex = 0;
+      isPlaying = 0;
+    }
+  }
 }
 
 void keyPressed() {
@@ -48,6 +64,7 @@ void keyPressed() {
     } else {
       println("Start recording");
       isRecording = 1;
+      isPlaying = 0;
     }
   }
 
@@ -57,5 +74,20 @@ void keyPressed() {
 
   if(key=='t') {
     r.trimEvents();
+    println("Trimming");
+  }
+
+  if(key=='p') {
+    if(isPlaying > 0) {
+      isPlaying = 0;
+    } else {
+      isRecording = 0;
+      isPlaying = 1;
+    }
+  }
+
+  if(key=='c') {
+    println("Clearing recording");
+    r = new Recording();
   }
 }
