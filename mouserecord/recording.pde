@@ -14,11 +14,19 @@ class Recording {
     return events;
   }
 
+    int eventsLength() {
+    return events.size();
+  }
+
+  int[] getEvent(int i) {
+    return (int[]) events.get(i);
+  }
+
   void trimEvents() {
     int startIndex = 0;
     int endIndex = events.size()-1;
 
-    // walk through until you find the first thing that isn't false
+    // walk through until you find the first thing that isn't a null entry
     for (int i = 0; i < events.size(); i++) {
       int[] event = (int[]) events.get(i);
       if(event[0] == 99999) {
@@ -27,7 +35,8 @@ class Recording {
         break;
       }
     }
-
+    
+    // walk backwards until you find the first thing that isn't a null entry
     for (int i = events.size()-1; i >= 0; i--) { 
       int[] event = (int[]) events.get(i);
       if(event[0] == 99999) {
@@ -40,10 +49,6 @@ class Recording {
     // now remove from front to first real node
     events.subList(endIndex, events.size()).clear();
     events.subList(0, startIndex).clear();
-
-    // now return the size of events
-    // println("Beginning is" + startIndex);
-    // println("End is" + endIndex);
   }
 
   String asString() {
@@ -58,13 +63,5 @@ class Recording {
     }
 
     return join(output, ", ");
-  }
-
-  int eventsLength() {
-    return events.size();
-  }
-
-  int[] getEvent(int i) {
-    return (int[]) events.get(i);
   }
 }
