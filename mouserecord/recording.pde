@@ -14,7 +14,7 @@ class Recording {
     return events;
   }
 
-    int eventsLength() {
+  int eventsLength() {
     return events.size();
   }
 
