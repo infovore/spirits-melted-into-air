@@ -61,6 +61,10 @@ void keyPressed() {
     if(isRecording > 0) {
       println("Stop recording");
       isRecording = 0;
+      if(r.eventsLength() > 0) {
+        r.trimEvents();
+        println("Trimming");
+      }
     } else {
       println("Start recording");
       isRecording = 1;
