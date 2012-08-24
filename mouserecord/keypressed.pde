@@ -11,6 +11,7 @@ void keyPressed() {
       println("Start recording");
       isRecording = 1;
       isPlaying = 0;
+      isStepPlayback = 0;
     }
   }
 
@@ -23,7 +24,18 @@ void keyPressed() {
       isPlaying = 0;
     } else {
       isRecording = 0;
+      isStepPlayback = 0;
       isPlaying = 1;
+    }
+  }
+
+  if(key=='s') {
+    if(isStepPlayback > 0) {
+      isStepPlayback = 0;
+    } else {
+      isRecording = 0;
+      isPlaying = 0;
+      isStepPlayback = 1;
     }
   }
 
