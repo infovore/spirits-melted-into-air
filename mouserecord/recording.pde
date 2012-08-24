@@ -18,6 +18,10 @@ class Recording {
     return events.size();
   }
 
+  void clearEvents() {
+    events.clear();
+  }
+
   int[] getEvent(int i) {
     return (int[]) events.get(i);
   }

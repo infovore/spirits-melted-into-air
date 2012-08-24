@@ -2,6 +2,7 @@ import controlP5.*;
 
 ControlP5 cp5;
 Textlabel modeLabel;
+Textlabel dataLabel;
 Textfield filenameInput;
 Slider timeline;
 
@@ -30,6 +31,11 @@ void draw() {
   background(0);
   noStroke();
 
+  if(r.eventsLength() > 0) {
+    dataLabel.setText(str(r.eventsLength()) + " events");
+  } else {
+    dataLabel.setText("");
+  }
 
   switch(mode) {
     case 0: // idle

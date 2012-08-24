@@ -4,6 +4,11 @@ void setupUI() {
                  .setPosition(0, 5)
                  .setColorValue(0xffffffff);
 
+  dataLabel = cp5.addTextlabel("dataLabel")
+                 .setText("")
+                 .setPosition(width-80, 5)
+                 .setColorValue(0xffffffff);
+
   timeline = cp5.addSlider("playbackIndexController")
    .setPosition(width-270,height-30)
    .setSize(200,20)
