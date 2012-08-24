@@ -54,15 +54,26 @@ void draw() {
   }
 
   if(isPlaying > 0) {
+    // timeline.show();
+    println("Playbackindex is " + str(playbackIndex));
+    println("Eventslength is " + str(r.eventsLength()));
+    if(playbackIndex == 0) {
+      timeline.setRange(0, r.eventsLength()-1);
+    }
+
     fill(255);
     modeLabel.setText("Playback");
 
     fill(0,0,128);
 
+    // cp5.getController("playbackIndex").setValue(playbackIndex);
+    timeline.setValue(playbackIndex);
+
     if(playbackIndex < r.eventsLength()) {
       int[] event = r.getEvent(playbackIndex);
       ellipse(event[0], event[1], circleSize, circleSize);
       playbackIndex++;
+      println("Playback index has changed to " + playbackIndex);
     } else {
       playbackIndex = 0;
       isPlaying = 0;
@@ -88,8 +99,6 @@ void draw() {
       playbackIndex = 0;
       isPlaying = 0;
     }
-  } else {
-    timeline.hide();
   }
 
   if(isPlaying < 1 && isRecording < 1 && isStepPlayback < 1) {

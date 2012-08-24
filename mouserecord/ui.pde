@@ -4,20 +4,20 @@ void setupUI() {
                  .setPosition(0, 5)
                  .setColorValue(0xffffffff);
 
-  timeline = cp5.addSlider("playbackIndex")
+  timeline = cp5.addSlider("playbackIndexController")
    .setPosition(width-270,height-30)
    .setSize(200,20)
    .setRange(0,9999)
    .setValue(0)
    .setLabel("Playhead");
 
-   filenameInput =  cp5.addTextfield("filename")
-     .setPosition(width-210,height-40)
-     .setSize(200,20)
-     .setFocus(true)
-     .setColor(color(255,0,0))
-     .setLabel("Filename");
-     ;
+   // filenameInput =  cp5.addTextfield("filename")
+   //   .setPosition(width-210,height-40)
+   //   .setSize(200,20)
+   //   .setFocus(true)
+   //   .setColor(color(255,0,0))
+   //   .setLabel("Filename");
+   //   ;
 
   cp5.addButton("playEvents")
      .setPosition(0+10,height-40)
@@ -52,6 +52,7 @@ public void playEvents() {
     isRecording = 0;
     isStepPlayback = 0;
     isPlaying = 1;
+    playbackIndex = 0;
   }
 }
 
@@ -93,5 +94,12 @@ public void loadEvents() {
     // If a file was selected, print path to file
     r.loadFromFile(loadPath);
     modeLabel.setText("LOADED");
+  }
+}
+
+
+public void playbackIndexController(float val) {
+  if(isStepPlayback > 0) {
+    playbackIndex = int(val);
   }
 }
