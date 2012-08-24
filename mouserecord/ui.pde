@@ -19,9 +19,6 @@ void setupUI() {
      .setLabel("");
      ;
 
- // cp5.getController("filename").getCaptionLabel().align(ControlP5.LEFT, ControlP5.LEFT).setPaddingX(0);
-
-
   cp5.addButton("playEvents")
      .setPosition(0+10,height-40)
      .setSize(30,30)
@@ -49,23 +46,19 @@ void setupUI() {
 }
 
 public void playEvents() {
-  if(isPlaying > 0) {
-    isPlaying = 0;
+  if(mode == 2) {
+    mode = 0;
   } else {
-    isRecording = 0;
-    isStepPlayback = 0;
-    isPlaying = 1;
+    mode = 2;
     playbackIndex = 0;
   }
 }
 
 public void stepEvents() {
-  if(isStepPlayback > 0) {
-    isStepPlayback = 0;
+  if(mode == 3) {
+    mode = 0;
   } else {
-    isRecording = 0;
-    isPlaying = 0;
-    isStepPlayback = 1;
+    mode = 3;
   }
 }
 
@@ -102,7 +95,7 @@ public void loadEvents() {
 
 
 public void playbackIndexController(float val) {
-  if(isStepPlayback > 0) {
+  if(mode == 3) {
     playbackIndex = int(val);
   }
 }
