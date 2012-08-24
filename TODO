@@ -22,3 +22,7 @@ proj-mapping
 
 recording within proj-mapping
   - can we basically translate MouseRecord into a GL texture? There are demos of this, I know.
+
+
+GET DIMENSIONS OF STAGE
+  - as well as unpicking to a rectangle, we need to scale it right...
