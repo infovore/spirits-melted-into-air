@@ -11,13 +11,16 @@ void setupUI() {
    .setValue(0)
    .setLabel("Playhead");
 
-   // filenameInput =  cp5.addTextfield("filename")
-   //   .setPosition(width-210,height-40)
-   //   .setSize(200,20)
-   //   .setFocus(true)
-   //   .setColor(color(255,0,0))
-   //   .setLabel("Filename");
-   //   ;
+ filenameInput =  cp5.addTextfield("filename")
+     .setPosition(width-270,height-60)
+     .setSize(200,20)
+     .setFocus(false)
+     .setColor(color(255,0,0))
+     .setLabel("");
+     ;
+
+ // cp5.getController("filename").getCaptionLabel().align(ControlP5.LEFT, ControlP5.LEFT).setPaddingX(0);
+
 
   cp5.addButton("playEvents")
      .setPosition(0+10,height-40)
