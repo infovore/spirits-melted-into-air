@@ -1,3 +1,8 @@
+import controlP5.*;
+
+ControlP5 cp5;
+Textlabel modeLabel;
+
 int isRecording = 0;
 int isPlaying = 0;
 int circleSize = 50;
@@ -6,15 +11,22 @@ int playbackIndex = 0;
 Recording r;
 
 void setup() {
-  size(640,480);
+  size(800,600);
   // frameRate(24);
 
   r = new Recording();
+
+  cp5 = new ControlP5(this);
+  modeLabel = cp5.addTextlabel("label")
+                 .setText("")
+                 .setPosition(0, height-12)
+                 .setColorValue(0xffffffff);
 }
 
 void draw() {
   background(0);
   noStroke();
+
   if(mousePressed) {
     fill(0,128,0);
   } else {
@@ -27,7 +39,7 @@ void draw() {
 
   if(isRecording > 0) {
     fill(255);
-    text("Recording", 0, height-2);
+    modeLabel.setText("Recording");
 
     if(mousePressed) {
       int[] coords = { mouseX, mouseY };
@@ -42,7 +54,8 @@ void draw() {
 
   if(isPlaying > 0) {
     fill(255);
-    text("Playback", 0, height-2);
+    modeLabel.setText("Playback");
+
     fill(0,0,128);
 
     if(playbackIndex < r.eventsLength()) {
@@ -53,5 +66,9 @@ void draw() {
       playbackIndex = 0;
       isPlaying = 0;
     }
+  }
+
+  if(isPlaying < 1 && isRecording < 1) {
+    modeLabel.setText("");
   }
 }

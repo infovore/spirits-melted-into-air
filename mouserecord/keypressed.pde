@@ -18,11 +18,6 @@ void keyPressed() {
     println(r.asDebugString());
   }
 
-  if(key=='t') {
-    r.trimEvents();
-    println("Trimming");
-  }
-
   if(key=='p') {
     if(isPlaying > 0) {
       isPlaying = 0;
@@ -33,17 +28,17 @@ void keyPressed() {
   }
 
   if(key=='c') {
-    println("Clearing recording");
+    modeLabel.setText("CLEARING");
     r = new Recording();
   }
 
   if(key=='[') {
-    println("Saving to file");
+    modeLabel.setText("SAVING");
     r.saveToFile();
   }
 
   if(key==']') {
-    println("Load file");
+    modeLabel.setText("LOADING");
     r.loadFromFile();
   }
 }
