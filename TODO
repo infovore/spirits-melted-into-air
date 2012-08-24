@@ -1,0 +1,24 @@
+  maybe string on Recording to log current filename
+how do we ignore keypresses when textfield has focus?
+how do we pause playback?
+
+annotations:
+  - if in step mode
+  - at this particular point, hit a button
+  - dialogue box, maybe, "string to annotate with"|durationInFrames
+  - annotations = [["oh that this too too solid flesh", 34,50]]
+    - here's a string, display it from frame 34 for 50 frames
+    - ie, every frame, find the first annotation where startFrame <= now and now < (startFrame + duration), show the annotation at the... point it begins? cursor?
+  - when we render this out, though, maybe we just add the annotation to all relevant frames...
+  - this is a desk problem. i think we need to do tracing and skew first.
+
+video: 
+  - explore how video playback works
+  - see if we can layer it in the background
+  - alternatively, slice a video into frames, choose which video to use from a folder, and off we go...
+
+proj-mapping
+  - can we set up a projmap on top of a video, that's semitransparent?
+
+recording within proj-mapping
+  - can we basically translate MouseRecord into a GL texture? There are demos of this, I know.
