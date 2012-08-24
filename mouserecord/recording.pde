@@ -74,8 +74,8 @@ class Recording {
     return output;
   }
 
-  void saveToFile() {
-    saveStrings("data/recording.txt", this.asStrings());
+  void saveToFile(String filename) {
+    saveStrings(filename, this.asStrings());
   }
 
   void loadFromFile(String filename) {

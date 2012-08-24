@@ -2,6 +2,7 @@ import controlP5.*;
 
 ControlP5 cp5;
 Textlabel modeLabel;
+Textfield filenameInput;
 Slider timeline;
 
 int isRecording = 0;
@@ -19,17 +20,8 @@ void setup() {
   r = new Recording();
 
   cp5 = new ControlP5(this);
-  modeLabel = cp5.addTextlabel("label")
-                 .setText("")
-                 .setPosition(0, height-12)
-                 .setColorValue(0xffffffff);
 
-  timeline = cp5.addSlider("playbackIndex")
-   .setPosition(width-270,height-30)
-   .setSize(200,20)
-   .setRange(0,9999)
-   .setValue(0)
-   .setLabel("Playhead");
+  setupUI();
 }
 
 void draw() {
