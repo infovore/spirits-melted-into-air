@@ -14,8 +14,8 @@ void keyPressed() {
     }
   }
 
-  if(key=='s') {
-    println(r.asString());
+  if(key=='d') {
+    println(r.asDebugString());
   }
 
   if(key=='t') {
@@ -35,5 +35,15 @@ void keyPressed() {
   if(key=='c') {
     println("Clearing recording");
     r = new Recording();
+  }
+
+  if(key=='[') {
+    println("Saving to file");
+    r.saveToFile();
+  }
+
+  if(key==']') {
+    println("Load file");
+    r.loadFromFile();
   }
 }

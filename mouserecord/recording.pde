@@ -51,7 +51,7 @@ class Recording {
     events.subList(0, startIndex).clear();
   }
 
-  String asString() {
+  String asDebugString() {
     String[] output = new String[events.size()];
     for (int i=0; i<events.size(); i++) {
       int[] event = (int[]) events.get(i);
@@ -63,5 +63,29 @@ class Recording {
     }
 
     return join(output, ", ");
+  }
+
+  String[] asStrings() {
+    String[] output = new String[events.size()];
+    for (int i=0; i<events.size(); i++) {
+      int[] event = (int[]) events.get(i);
+      output[i] = str(event[0]) + "," + str(event[1]);
+    }
+    return output;
+  }
+
+  void saveToFile() {
+    saveStrings("data/recording.txt", this.asStrings());
+  }
+
+  void loadFromFile() {
+    events.clear();
+    String[] lines = loadStrings("data/recording.txt");
+    for (int i=0; i< lines.length; i++) {
+      String[] strCoords = split(lines[i], ",");
+      int[] coords = { int(strCoords[0]), int(strCoords[1]) };     
+      this.addEvent(coords);
+    }
+    println(events.size() + " events added.");
   }
 }
