@@ -78,9 +78,9 @@ class Recording {
     saveStrings("data/recording.txt", this.asStrings());
   }
 
-  void loadFromFile() {
+  void loadFromFile(String filename) {
     events.clear();
-    String[] lines = loadStrings("data/recording.txt");
+    String[] lines = loadStrings(filename);
     for (int i=0; i< lines.length; i++) {
       String[] strCoords = split(lines[i], ",");
       int[] coords = { int(strCoords[0]), int(strCoords[1]) };     

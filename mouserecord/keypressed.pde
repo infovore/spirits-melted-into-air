@@ -51,6 +51,14 @@ void keyPressed() {
 
   if(key==']') {
     modeLabel.setText("LOADING");
-    r.loadFromFile();
+    String loadPath = selectInput();  // Opens file chooser
+    if (loadPath == null) {
+      // If a file was not selected
+      println("No file was selected...");
+    } else {
+      // If a file was selected, print path to file
+      r.loadFromFile(loadPath);
+      modeLabel.setText("LOADED");
+    }
   }
 }
