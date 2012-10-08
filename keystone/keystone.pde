@@ -26,6 +26,7 @@ int mode = 0; // 0 = IDLE
 Recording r;
 
 PImage swan;
+int drawSwan;
 
 void setup() {
   size(1024, 768, GLConstants.GLGRAPHICS);
@@ -40,6 +41,7 @@ void setup() {
   setupUI();
 
   swan = loadImage("swan.jpg");
+  drawSwan = 1;
 }
 
 void draw() {
@@ -47,8 +49,12 @@ void draw() {
   PVector mouse = surface.getTransformedMouse();
   background(0);
 
+  // if we're drawing the swan, draw it.
+  if(drawSwan > 0) {
+    image(swan,0,0,width,height);
+  }
+
   // first draw the sketch offscreen
-  image(swan,0,0,width,height);
   offscreen.beginDraw();
   offscreen.fill(255);
   noStroke();

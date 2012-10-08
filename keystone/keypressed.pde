@@ -21,5 +21,8 @@ void keyPressed() {
       mode = 1;
     }
     break;
+  case 'b':
+    drawSwan = 1 - drawSwan;
+    break;
   }
 }
