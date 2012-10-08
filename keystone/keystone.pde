@@ -25,6 +25,8 @@ int mode = 0; // 0 = IDLE
 
 Recording r;
 
+PImage swan;
+
 void setup() {
   size(1024, 768, GLConstants.GLGRAPHICS);
 
@@ -36,18 +38,19 @@ void setup() {
   r = new Recording();
   cp5 = new ControlP5(this);
   setupUI();
+
+  swan = loadImage("swan.jpg");
 }
 
 void draw() {
   // convert 
   PVector mouse = surface.getTransformedMouse();
   background(0);
+
   // first draw the sketch offscreen
+  image(swan,0,0,width,height);
   offscreen.beginDraw();
-  offscreen.background(50);
-  offscreen.lights();
   offscreen.fill(255);
-  offscreen.background(0);
   noStroke();
 
   if(r.eventsLength() > 0) {
@@ -68,6 +71,7 @@ void draw() {
         offscreen.fill(128,0,0);
       }
 
+      offscreen.clear(0,0);
       offscreen.ellipse(int(mouse.x),int(mouse.y),circleSize,circleSize);
 
       modeLabel.setText("Recording");
@@ -99,6 +103,7 @@ void draw() {
 
       if(playbackIndex < r.eventsLength()) {
         int[] event = r.getEvent(playbackIndex);
+        offscreen.clear(0,0);
         offscreen.ellipse(event[0], event[1], circleSize, circleSize);
         playbackIndex++;
         println("Playback index has changed to " + playbackIndex);
@@ -121,6 +126,7 @@ void draw() {
 
       if(playbackIndex < r.eventsLength()) {
         int[] event = r.getEvent(playbackIndex);
+        offscreen.clear(0,0);
         offscreen.ellipse(event[0], event[1], circleSize, circleSize);
       } else {
         playbackIndex = 0;
