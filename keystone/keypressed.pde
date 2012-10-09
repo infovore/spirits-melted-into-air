@@ -24,5 +24,18 @@ void keyPressed() {
   case 'b':
     drawSwan = 1 - drawSwan;
     break;
+
+  case '[':
+    // loads the saved layout
+    File f = new File(dataPath("keystone.xml"));
+    if (f.exists()) {
+      ks.load();
+    } 
+    break;
+
+  case ']':
+    // saves the layout
+    ks.save();
+    break;
   }
 }

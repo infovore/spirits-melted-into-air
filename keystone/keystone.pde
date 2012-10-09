@@ -12,7 +12,6 @@ CornerPinSurface surface;
 ControlP5 cp5;
 Textlabel modeLabel;
 Textlabel dataLabel;
-Textfield filenameInput;
 Slider timeline;
 
 int circleSize = 50;
