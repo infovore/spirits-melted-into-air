@@ -79,6 +79,10 @@ void draw() {
       image(tex,0,0);
       indexToShow++;
       break;
+    case 3: // step
+      tex.loadTexture(dataPath("img/" + videoFilenames[playbackIndex]));  
+      image(tex,0,0);
+      break;
   }
 
   // first draw the sketch offscreen
