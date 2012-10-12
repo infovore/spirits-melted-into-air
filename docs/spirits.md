@@ -29,7 +29,6 @@ Once a suitable scene or piece of footage has been found, a recording is created
 
 The master camera gives us a perspective view. It would be good, if, instead of having a recording of motion in the "trapezium" of the flat stage, we could "unwrap" it into a rectangle, ideally with the same proportions as the stage. Then we'd have, essentially, an overhead view of the actor's motion, stored as a set of co-ordinates and timestamps.
 
-[illustration]
 
 II: Illustrating Performance
 ----------------------------

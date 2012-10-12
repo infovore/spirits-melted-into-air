@@ -42,7 +42,7 @@ void setup() {
   cp5 = new ControlP5(this);
   setupUI();
 
-  movie = new GSMovie(this, "swan.mov");
+  movie = new GSMovie(this, "richout.mpg");
   tex = new GLTexture(this);
   movie.setPixelDest(tex);
 

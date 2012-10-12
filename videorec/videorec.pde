@@ -63,25 +63,25 @@ void draw() {
   // draw the background
   switch(mode) {
     case 0: // idle
-      image(tex,0,0);
+      image(tex,0,0, width, height);
       break;
     case 1: // recording
       if(indexToShow != prevIndexToShow && indexToShow < videoFilenames.length) {
         tex.loadTexture(dataPath("img/" + videoFilenames[indexToShow]));
       }
-      image(tex,0,0);
+      image(tex,0,0, width, height);
       indexToShow++;
       break;
     case 2: // playback
       if(indexToShow != prevIndexToShow && indexToShow < videoFilenames.length) {
         tex.loadTexture(dataPath("img/" + videoFilenames[indexToShow]));  
       }
-      image(tex,0,0);
+      image(tex,0,0, width, height);
       indexToShow++;
       break;
     case 3: // step
       tex.loadTexture(dataPath("img/" + videoFilenames[playbackIndex]));  
-      image(tex,0,0);
+      image(tex,0,0, width, height);
       break;
   }
 
