@@ -51,7 +51,7 @@ public void playEvents() {
   } else {
     mode = 2;
     playbackIndex = 0;
-    movie.jump(0);
+    movie.goToBeginning();
     movie.play();
     println("PLAY MOVIE");
   }
