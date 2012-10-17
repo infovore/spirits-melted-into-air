@@ -28,15 +28,21 @@ int mode = 0; // 0 = IDLE
               // 2 = PLAYBACK
               // 3 = STEP
 
+
+// theatre stage ratio;
+// SWAN:
+int stageWidth = 2200;
+int stageHeight = 2800;
+
 Recording r;
 
 void setup() {
   size(1280, 720, GLConstants.GLGRAPHICS);
 
-  offscreen = new GLGraphicsOffScreen(this, 2000, 2000);
+  offscreen = new GLGraphicsOffScreen(this, stageWidth, stageHeight);
 
   ks = new Keystone(this);
-  surface = ks.createCornerPinSurface(2000, 2000, 20);
+  surface = ks.createCornerPinSurface(stageWidth, stageHeight, 20);
 
   r = new Recording();
   cp5 = new ControlP5(this);
@@ -49,8 +55,8 @@ void setup() {
   movie.play();
   movie.goToBeginning();
   movie.pause();
-  movie.frameRate(25);
-  frameRate(25);
+  movie.frameRate(30);
+  frameRate(30);
 
 }
 
@@ -62,34 +68,22 @@ void draw() {
   // draw the background
   switch(mode) {
     case 0: // idle
-      // image(tex,0,0);
+      movie.read();
       if (tex.putPixelsIntoTexture()) {
         image(tex, 0, 0, width, height);
       }
       break;
     case 1: // recording
-      // if(indexToShow != prevIndexToShow && indexToShow < videoFilenames.length) {
-      //   tex.loadTexture(dataPath("img/" + videoFilenames[indexToShow]));
-      // }
-      // image(tex,0,0);
-      // indexToShow++;
       if (tex.putPixelsIntoTexture()) {
         image(tex, 0, 0, width, height);
       }
       break;
     case 2: // playback
-      // if(indexToShow != prevIndexToShow && indexToShow < videoFilenames.length) {
-      //   tex.loadTexture(dataPath("img/" + videoFilenames[indexToShow]));  
-      // }
-      // image(tex,0,0);
-      // indexToShow++;
       if (tex.putPixelsIntoTexture()) {
         image(tex, 0, 0, width, height);
       }
       break;
     case 3: // step
-      // tex.loadTexture(dataPath("img/" + videoFilenames[playbackIndex]));  
-      // image(tex,0,0);
       movie.play();
       movie.jump(playbackIndex);
       movie.pause();
@@ -130,18 +124,20 @@ void draw() {
 
       if(mousePressed) {
         int[] coords = { int(mouse.x), int(mouse.y) };
-        r.addEvent(coords);
-        println("Adding " + coords[0] + ", " + coords[1]);
+        if((mouse.x >= 0) && (mouse.x < stageWidth) && (mouse.y >= 0) && (mouse.y < stageHeight)) {
+          r.addEvent(coords);
+          println("Adding " + coords[0] + ", " + coords[1]);
+        } else {
+          println("Out of bounds; not adding " + coords[0] + ", " + coords[1]);
+        }
       } else {
-        println("Adding null");
+        //println("Adding null");
         int[] coords = {99999,99999};
         r.addEvent(coords);
       }
     break;
     case 2: // playback
       timeline.show();
-      // println("Playbackindex is " + str(playbackIndex));
-      // println("Eventslength is " + str(r.eventsLength()));
       if(playbackIndex == 0) {
         timeline.setRange(0, r.eventsLength()-1);
       }
