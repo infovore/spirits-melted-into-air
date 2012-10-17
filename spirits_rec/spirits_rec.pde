@@ -33,10 +33,10 @@ Recording r;
 void setup() {
   size(1280, 720, GLConstants.GLGRAPHICS);
 
-  offscreen = new GLGraphicsOffScreen(this, width, height);
+  offscreen = new GLGraphicsOffScreen(this, 2000, 2000);
 
   ks = new Keystone(this);
-  surface = ks.createCornerPinSurface(width, height, 20);
+  surface = ks.createCornerPinSurface(2000, 2000, 20);
 
   r = new Recording();
   cp5 = new ControlP5(this);
