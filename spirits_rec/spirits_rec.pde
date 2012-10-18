@@ -155,7 +155,6 @@ void draw() {
         offscreen.ellipse(event[0], event[1], circleSize, circleSize);
         playbackIndex++;
         println("Playback index has changed to " + playbackIndex);
-      } else if(movie.isPlaying()) {
       } else {
         playbackIndex = 0;
         mode = 0;
