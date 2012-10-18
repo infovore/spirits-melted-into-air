@@ -5,10 +5,15 @@ int[][] coords;
 int index = 0;
 int skipValue = 20;
 
+// set up stagewidth
+// SWAN
+int stageWidth = 2200;
+int stageHeight = 2800;
+
 void setup() {
-  size(1280,720, PGraphicsSVG.SVG,"winter.svg");
+  size(stageWidth, stageHeight, PGraphicsSVG.SVG,"winter-scaled.svg");
   smooth();
-  lines = loadStrings("winter-discontent-hq.txt");
+  lines = loadStrings("winter-scaled.txt");
 
   coords = new int[lines.length][2];
   for (int i = 0; i < lines.length; i++) {
@@ -33,7 +38,10 @@ void draw() {
       index = i;
       // scaleStroke(coords[index][0], coords[index][1], coords[index+1][0], coords[index+1][1]);
       // line(coords[index][0], coords[index][1], coords[index+1][0], coords[index+1][1]);
-      vertex(coords[index][0], coords[index][1]);
+      // skip out of grid moments
+      if(coords[index][0]!= 99999) {
+        vertex(coords[index][0], coords[index][1]);
+      }
     }
   }
   endShape();
