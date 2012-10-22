@@ -2,10 +2,14 @@ body {
   padding-top: 40px;
 }
 
+span.cleardiv {
+  clear: both;
+  display: block;
+}
+
 section {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
-  margin-left: -20px;
 }
 
 h1, h2 {
