@@ -1,0 +1,24 @@
+section {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-left: -20px;
+}
+
+h1, h2 {
+  font-family: "Minion Pro";
+}
+
+h1.mainhead {
+  text-align: center;
+  font-size: 48px;
+}
+
+h1.mainhead span {
+  display: block;
+  font-style: italic;
+  font-size: 60%;
+}
+
+#intro {
+  margin-top: 20px;
+}
