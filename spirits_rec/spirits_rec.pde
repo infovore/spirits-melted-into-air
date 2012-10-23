@@ -31,8 +31,12 @@ int mode = 0; // 0 = IDLE
 
 // theatre stage ratio;
 // SWAN:
-int stageWidth = 2200;
-int stageHeight = 2800;
+//int stageWidth = 2200;
+//int stageHeight = 2800;
+
+// RST:
+int stageWidth = 2600;
+int stageHeight = 3700;
 
 Recording r;
 
@@ -48,7 +52,7 @@ void setup() {
   cp5 = new ControlP5(this);
   setupUI();
 
-  movie = new GSMovie(this, "richout.mpg");
+  movie = new GSMovie(this, "comedy.mov");
   tex = new GLTexture(this);
   movie.setPixelDest(tex);
 
