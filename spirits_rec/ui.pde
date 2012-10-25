@@ -46,6 +46,7 @@ public void playEvents() {
   println("Mode is " + mode);
   if(mode == 2) {
     mode = 0;
+    println("Mode is now " + mode);
     println("PAUSE MOVIE");
     movie.pause();
   } else {
@@ -54,6 +55,7 @@ public void playEvents() {
     movie.goToBeginning();
     movie.play();
     println("PLAY MOVIE");
+    println("Mode is now " + mode);
   }
 }
 

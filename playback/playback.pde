@@ -7,13 +7,17 @@ int skipValue = 20;
 
 // set up stagewidth
 // SWAN
-int stageWidth = 2200;
-int stageHeight = 2800;
+//int stageWidth = 2200;
+//int stageHeight = 2800;
+
+// RST:
+int stageWidth = 2600;
+int stageHeight = 3700;
 
 void setup() {
-  size(stageWidth, stageHeight, PGraphicsSVG.SVG,"winter-scaled.svg");
+  size(stageWidth, stageHeight, PGraphicsSVG.SVG,"adriana-scaled.svg");
   smooth();
-  lines = loadStrings("winter-scaled.txt");
+  lines = loadStrings("adriana.txt");
 
   coords = new int[lines.length][2];
   for (int i = 0; i < lines.length; i++) {

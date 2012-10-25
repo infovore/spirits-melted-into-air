@@ -161,7 +161,6 @@ void draw() {
         println("Playback index has changed to " + playbackIndex);
       } else {
         playbackIndex = 0;
-        mode = 0;
       }
     break;
     case 3: // step playback
