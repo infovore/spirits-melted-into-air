@@ -1,5 +1,4 @@
 body {
-  padding-top: 40px;
 }
 
 span.cleardiv {
@@ -16,9 +15,15 @@ h1, h2 {
   font-family: "Minion Pro";
 }
 
+.header {
+  padding: 10px 0;
+  height: 90px;
+}
+
 h1.mainhead {
   text-align: center;
   font-size: 48px;
+  width: 100%;
 }
 
 h1.mainhead span {
@@ -29,4 +34,43 @@ h1.mainhead span {
 
 #intro {
   margin-top: 20px;
+}
+
+.navbar {
+  width: 100%;
+  top: 0;
+  text-align: center;
+}
+
+.navbar ul.nav {
+  /*border: 1px solid pink;*/
+  width: 630px;
+  margin-left: -315px;
+  left: 50%;
+}
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .navbar ul.nav {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+  }
+
+  .header {
+    height: 100%;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+  .navbar ul.nav {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+  }
+  .header {
+    height: 100%;
+  }
 }
