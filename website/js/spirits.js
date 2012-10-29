@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  $('.fancybox').fancybox({
+    helpers: {
+      title: {
+        type: 'over'
+      }
+    }
+  });
   $('#navbar').scrollspy();
 
   $('.navbar').affix({

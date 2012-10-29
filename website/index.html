@@ -10,6 +10,8 @@
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
     <![endif]-->
+    <!-- fancybox -->
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
   </head>
   <body data-spy="scroll" data-target=".navbar">
     <div class="header container">
@@ -25,6 +27,7 @@
             <li><a href="#wood">Wood</a></li>
             <li><a href="#next">What's Next</a></li>
             <li><a href="#thanks">Credits</a></li>
+            <li><a href="#press">Press</a></li>
             <li><a href="http://github.com/infovore/spirits-melted-into-air">Github</a>
           </ul>
         </div>
@@ -58,7 +61,7 @@
       <section class="row" id="capturing">
         <h2 class="span12">Capturing the data</h2>
         <div class="span5">
-          <img src="/img/spirits-ui.jpg" />
+          <div class="pic"><a class="fancybox" title="Spirits Melted Into Air: the Processing application being used to trace Richard III. Note the skewed grid mapped to the stage." href="/img/spirits-ui.jpg"><img src="/img/spirits-ui.jpg" /></a></div>
         </div>
         <div class="span7">
           <p>The data was captured from performance footage in a custom-build <a href="http://processing.org">Processing</a> application. Actors' movements were traced with a mouse whilst they performed, and that data logged to files on disk.</p>
@@ -76,11 +79,11 @@
           <p>They display the paths taken by the actor(s), annotated with appropriate lines from the text, anchoring motion and speech. The format of the posters hints at other print representations of motion - dance notation, football play-by-play diagrams.</p> 
         </div>
         <div class="span3 offset1">
-          col2
+          <div class="pic"><a href="img/sloth.jpg" rel='gallery-print' class="fancybox" title="A tiny, tiny sloth."><img src="img/sloth.jpg" /></a></div>
           <div class="caption"><strong>Richard</strong> III I.i<br/>"<em>Now is the winter of our discontent</em>"</div>
         </div>
         <div class="span3">
-          col3
+          <div class="pic"><a href="img/sloth.jpg" rel='gallery-print' class="fancybox" title="A tiny, tiny sloth."><img src="img/sloth.jpg" /></a></div>
           <div class="caption"><strong>The Comedy of Errors</strong> II.i<br/>"<em>Say, is your tardy master now at hand?</em>"</div>
         </div>
       </section>
@@ -89,10 +92,12 @@
       <section class="row" id="wood">
         <h2 class="span12">Visualising the data in wood</h2>
         <div class="span3">
-          pic1
+          <div class="pic"><a href="img/sloth.jpg" rel='gallery-wood' class="fancybox" title="A tiny, tiny sloth."><img src="img/sloth.jpg" /></a></div>
+          <div class="caption"><strong>Richard</strong> III I.i<br/>"<em>Now is the winter of our discontent</em>"</div>
         </div>
         <div class="span3">
-          pic2
+          <div class="pic"><a href="img/sloth.jpg" rel='gallery-wood' class="fancybox" title="A tiny, tiny sloth."><img src="img/sloth.jpg" /></a></div>
+          <div class="caption"><strong>The Comedy of Errors</strong> II.i<br/>"<em>Say, is your tardy master now at hand?</em>"</div>
         </div>
         <div class="span5 offset1">
           <p>Print isn't the only medium we can visualise this data in. I also translated the movement data into lasercut wooden shapes. These shapes are more abstract than the printed visualisations; more aesthetically pleasing than utalitarian. Engraved arrows hint at the directions of movement. For <em>The Comedy of Errors</em>, I cut each actor as separate pieces of wood to the same scale, allowing the two paths to be overlaid, one atop the other.</p>
@@ -114,6 +119,8 @@
           <p>Printing by <a href="http://www.quattrodp.com/">Quattro Design and Print</a></p>
           <p>Lasercutting by <a href="http://cutlasercut.com">Cut Laser Cut.</a></p>
           <p><i>Spirits Melted Into Air</i> is a <a href="http://myshakespeare.worldshakespearefestival.org.uk/" target="_blank">My Shakespeare Commission</a>, produced in 2012 by the <a href="http://www.rsc.org.uk/" target="_blank">Royal Shakespeare Company</a> on the occasion of the <a href="http://www.worldshakespearefestival.org.uk/" target="_self">World Shakespeare Festival</a>, which the company is producing on behalf of the <a href="http://www.olympic.org/london-2012-summer-olympics" target="_blank">London Organising Committee of the Olympic Games and Paralypic Games Ltd</a>. </p>
+          <h2 id="press">Press</h2>
+          <p>High-resolution photographs available on request. <a href="mailto:tom@infovore.org?subject=Spirits Press photographs">Get in touch if you'd like them.</a></p>
         </div>
       </section>
     </div>
@@ -133,6 +140,7 @@
 
     </script>
     <script type="text/javascript" src="//use.typekit.net/sry2jyf.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript" src="/fancybox/jquery.fancybox.pack.js"></script>
   </body>
 </html>
