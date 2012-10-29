@@ -71,8 +71,30 @@ h1.mainhead span {
   left: 50%;
 }
 
+.video-elem {
+  margin: 0 0 10px 20px;
+  width: 540px;
+  height: 303px; /* TODO: remove */
+  float: right;
+  background: pink;
+}
+
 .caption {
   font-size: 85%;
+}
+
+@media (min-width: 1200px) {
+  .video-elem {
+    width: 670px;
+    height: 377px;
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  .video-elem {
+    width: 414px;
+    height: 233px; /* TODO: remove */
+  }
 }
 
 /* Landscape phone to portrait tablet */
@@ -85,6 +107,14 @@ h1.mainhead span {
 
   .header {
     height: 100%;
+  }
+
+  .video-elem {
+    margin: 0 0 10px 0;
+    height: 233px; /* TODO: remove */
+    float: none;
+    width: 100%;
+    display: block;
   }
 }
 
