@@ -11,8 +11,30 @@ section {
   padding-bottom: 10px;
 }
 
+section.last {
+  margin-bottom: 40px;
+}
+
+cite {
+  font-family: "Minion Pro", serif;
+  text-align: right;
+  display: block;
+  margin: 0 0 20px;
+  font-weight: bold;
+}
+
 h1, h2 {
-  font-family: "Minion Pro", serif;;
+  font-family: "Minion Pro", serif;
+}
+
+blockquote.quote {
+  font-family: "Minion Pro", serif;
+  font-style: italic;
+  font-size: 110%;
+  line-height: 1.4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .header {
@@ -49,6 +71,9 @@ h1.mainhead span {
   left: 50%;
 }
 
+.caption {
+  font-size: 85%;
+}
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
@@ -74,3 +99,4 @@ h1.mainhead span {
     height: 100%;
   }
 }
+
