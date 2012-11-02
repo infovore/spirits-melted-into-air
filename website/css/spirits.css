@@ -6,6 +6,10 @@ span.cleardiv {
   display: block;
 }
 
+.inviz {
+  display: none;
+}
+
 section {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
@@ -74,9 +78,8 @@ h1.mainhead span {
 .video-elem {
   margin: 0 0 10px 20px;
   width: 540px;
-  height: 303px; /* TODO: remove */
   float: right;
-  background: pink;
+  /*background: pink;*/
 }
 
 .caption {
