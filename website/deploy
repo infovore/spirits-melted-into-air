@@ -1,1 +1,1 @@
-rsync -arvuz . paprika:/var/www/spiritsmeltedintoair/html/ --exclude '.git' --exclude 'deploy' 
+rsync -arvuz . paprika:/var/www/spiritsmeltedintoair/html/ --exclude '.git' --exclude 'deploy' --exclude '*.un~'

@@ -78,6 +78,7 @@ h1.mainhead span {
 .video-elem {
   margin: 0 0 10px 20px;
   float: right;
+  width: 540px;
   /*background: pink;*/
 }
 
