@@ -70,33 +70,48 @@ h1.mainhead span {
 
 .navbar ul.nav {
   /*border: 1px solid pink;*/
-  width: 670px;
-  margin-left: -335px;
+  width: 700px;
+  margin-left: -350px;
   left: 50%;
 }
 
 .video-elem {
   margin: 0 0 10px 20px;
-  width: 540px;
   float: right;
   /*background: pink;*/
 }
 
+.video-wrap {
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-wrap iframe,
+.video-wrap object,
+.video-wrap embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .caption {
   font-size: 85%;
+  margin: 0 0 20px;
 }
 
 @media (min-width: 1200px) {
   .video-elem {
     width: 670px;
-    height: 377px;
   }
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
   .video-elem {
     width: 414px;
-    height: 233px; /* TODO: remove */
   }
 }
 
@@ -114,7 +129,6 @@ h1.mainhead span {
 
   .video-elem {
     margin: 0 0 10px 0;
-    height: 233px; /* TODO: remove */
     float: none;
     width: 100%;
     display: block;
