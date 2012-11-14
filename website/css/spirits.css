@@ -42,8 +42,8 @@ blockquote.quote {
 }
 
 .header {
-  padding: 10px 0;
-  height: 90px;
+  padding: 10px 0 0;
+  /*height: 90px;*/
 }
 
 h1.mainhead {
@@ -66,6 +66,7 @@ h1.mainhead span {
   width: 100%;
   top: 0;
   text-align: center;
+  z-index: 50;
 }
 
 .navbar ul.nav {
@@ -145,6 +146,9 @@ h1.mainhead span {
   }
   .header {
     height: 100%;
+  }
+  .navbar.affix {
+    display: none;
   }
 }
 
