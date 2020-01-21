@@ -20,19 +20,20 @@ section.last {
 }
 
 cite {
-  font-family: "Minion Pro", serif;
+  font-family: "Crimson Text", serif;
   text-align: right;
   display: block;
   margin: 0 0 20px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 h1, h2 {
-  font-family: "Minion Pro", serif;
+  font-family: "Crimson Text", serif;
+  font-weight: 600;
 }
 
 blockquote.quote {
-  font-family: "Minion Pro", serif;
+  font-family: "Crimson Text", serif;
   font-style: italic;
   font-size: 110%;
   line-height: 1.4;
